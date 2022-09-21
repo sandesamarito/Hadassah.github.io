@@ -1,0 +1,775 @@
+:root{
+    --main:chartreuse;
+    --nav:#05668D;
+    --webtext:white;
+    --bgdark:rgb(7, 0, 0);
+    --secondary:rgb(158, 97, 6);
+    --somelement:red;
+    --else:rgb(34, 31, 31);
+    --bshadow:0px 3px 15px rgba(238, 22, 130, 0.06);
+}
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Clear fix hack */
+  .clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  /******************************************
+  /* BASE STYLES
+  /*******************************************/
+  
+  body {
+    font-family: "Mulish", sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Utilities Classes */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+  
+  .lead-body {
+    color: #737373;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 2;
+  }
+  
+  .icon-style {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: black;
+    border-radius: 50%;
+    line-height: 40px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 0 0.5em;
+    text-align: center;
+  }
+  
+  .icon-style:hover {
+    transform: scale(1.1) rotate(360deg);
+  }
+  
+  .search-icon::before {
+    content: "\e090";
+    font-family: "simple-line-icons";
+  }
+  
+  .dots::before {
+    content: "\e603";
+    font-family: "simple-line-icons";
+    margin-right: 1em;
+    vertical-align: middle;
+  }
+  
+  .btn .dots::before {
+    margin-right: 0.5em;
+  }
+  
+  .primary-header {
+    font-family: "cinzel", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .primary-header::after {
+    content: "";
+    width: 35px;
+    background: black;
+    display: block;
+    height: 4px;
+    margin: 0.5em auto 1.5em;
+    border-radius: 50px;
+  }
+  
+  .btn {
+    display: inline-block;
+    font-family: "Mulish", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 1em;
+  }
+  
+  .btn-dark {
+    background: black;
+    color: white;
+  }
+  
+  .btn-light {
+    background-color: white;
+    color: black;
+  }
+  
+  .card {
+    width: 40%;
+    padding: 2em;
+    background: black;
+    position: absolute;
+    top: 85%;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 500px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 80px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+  
+  .main-nav {
+    width: 70%;
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .list-item > a {
+    padding: 1em 0.5em;
+  }
+  
+  .handbag-item {
+    position: relative;
+  }
+  
+  .count-icon {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 0.7rem;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 0.7em;
+    display: grid;
+    place-content: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    header {
+      height: 130px;
+    }
+  
+    .logo {
+      margin: 0 auto;
+    }
+  
+    .main-nav {
+      width: 100%;
+    }
+  
+    .nav-list {
+      padding: 0;
+    }
+  
+    .dots {
+      margin: 0 auto;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    header {
+      height: 10rem;
+      overflow: unset;
+    }
+  }
+  
+  /* Hero Section */
+  .section-hero {
+    position: relative;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0)
+      ),
+      url("salonstuff.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50em;
+  }
+  
+  .hours {
+    position: absolute;
+    top: 50%;
+    right: -160px;
+    transform: rotate(90deg);
+    font-family: "cinzel", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    letter-spacing: 5px;
+    color: white;
+    display: block;
+    white-space: unset;
+    text-transform: uppercase;
+  }
+  
+  .text-content {
+    position: relative;
+    width: 60%;
+    font-family: "cinzel", sans-serif;
+    padding: 10em 0;
+    color: #f1f1f1;
+  }
+  
+  .main-header-text {
+    font-family: "cinzel", sans-serif;
+    font-size: 5em;
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  
+  .lead {
+    letter-spacing: 4px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .text-content {
+      width: 80%;
+    }
+  
+    .main-header-text {
+      font-size: 4em;
+    }
+  
+    .card {
+      width: 60%;
+    }
+  
+    .hours {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .section-hero {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0)
+        ),
+        url("Hair1.avif");
+      background-position: 65% 0;
+    }
+  
+    .text-content {
+      padding: 5em 0;
+    }
+  
+    .main-header-text {
+      font-size: 2.5rem;
+    }
+  
+    .card {
+      display: none;
+    }
+  }
+  
+  /* Section 3-column */
+  .three-column {
+    padding: 10em 0 5em;
+  }
+  
+  .box {
+    text-align: center;
+    flex-basis: 32%;
+    padding: 0 2em;
+  }
+  
+  .box-header {
+    font-family: "cinzel", sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  .img-icon {
+    display: inline-block;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .three-column .flex {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  
+    .box {
+      flex-basis: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .three-column {
+      padding: unset;
+    }
+  
+    .three-column .flex {
+      display: block;
+    }
+  
+    .box {
+      padding: unset;
+      margin: 5em 0;
+    }
+  }
+  
+  /* Video Section */
+  .video-section {
+    background-color: #f3f4f6;
+    padding: 5em 0;
+  }
+  
+  .video-text-content {
+    flex-basis: 50%;
+    padding-right: 5em;
+  }
+  
+  .video-header {
+    font-family: "cinzel", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+  }
+  
+  .video-body {
+    margin-bottom: 2em;
+  }
+  
+  .video-image-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .video-header {
+      font-size: 2rem;
+    }
+  
+    .video-text-content {
+      flex-basis: 90%;
+      padding-right: 1em;
+    }
+  
+    .play-icon {
+      width: 4rem;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .video-section .flex {
+      flex-direction: column;
+    }
+  
+    .video-text-content {
+      padding-right: unset;
+      margin-bottom: 2em;
+    }
+  
+    .video-header {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Stylers And Promo Section */
+  .stylers-section .flex {
+    flex-wrap: wrap;
+  }
+  
+  .styler-box {
+    width: 230px;
+    text-align: center;
+    font-family: "cinzel", sans-serif;
+    position: relative;
+  }
+  
+  .styler-box > h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+  
+  .styler-box > p {
+    font-size: 0.8rem;
+    font-family: "mulish", sans-serif;
+    text-transform: uppercase;
+  }
+  
+  .styler-social-links {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  
+  .styler-img {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .styler-box:hover > .styler-social-links {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .styler-box:hover > .styler-img {
+    opacity: 0.5;
+  }
+  
+  /* Promo Section */
+  .promo-section {
+    background-image: url("wash.jpg");
+    background-size: cover;
+    padding: 4em;
+    margin: 5em 0;
+    font-family: "cinzel", sans-serif;
+    color: var(--secondary);
+  }
+  
+  .promo-body {
+    width: 55%;
+  }
+  
+  .promo-body > h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  
+  .promo-body > h3 {
+    font-size: 2.8rem;
+    font-weight: 400;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .promo-section {
+      background-position: center;
+    }
+  
+    .promo-body > h3 {
+      font-size: unset;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .primary-header {
+      font-size: 2rem;
+    }
+  
+    .stylers-section .flex {
+      justify-content: center;
+    }
+  
+    .promo-section {
+      background-position: 65%;
+      padding: 1em;
+    }
+  
+    .btn {
+      font-size: 0.6rem;
+    }
+  }
+  
+  /* Lookbook Section */
+  .lookbook-section {
+    padding: 0 2rem 5rem;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    grid-auto-flow: dense;
+  }
+  
+  .grid-item {
+    background-size: cover;
+    min-height: 350px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .grid-item::after {
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .grid-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: url("salonstuff.jpg")
+      no-repeat center;
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+  }
+  
+  .grid-item:hover.grid-item::after,
+  .grid-item:hover.grid-item::before {
+    opacity: 1;
+  }
+  
+  .grid-item:nth-child(2n):not(.grid-item:last-child) {
+    grid-row: span 2;
+  }
+  
+  .photo-00 {
+    background-image: url("nab.jpg");
+    background-size: cover;
+  }
+  .photo-01 {
+    background-image: url("lips.jpg");
+    /* grid-row: 1/3;
+    grid-column: 2/3; */
+  }
+  
+  .photo-02 {
+    background-image: url("Hair1.avif");
+  }
+  
+  .photo-03 {
+    background-image: url("pperfect.jpg");
+    /* grid-column: 1/2;
+    grid-row: 2/4; */
+  }
+  
+  .photo-04 {
+    background-image: url("beauty.jpg");
+    grid-row: span 2;
+  }
+  
+  .photo-05 {
+    background-image: url("lashes.jpg");
+    /* grid-column: 3/4;
+    grid-row: 2/4; */
+  }
+  
+  @media (max-width: 500px) {
+    .lookbook-section {
+      padding: 2rem 0;
+    }
+  
+    .lookbook-section .container {
+      padding: unset;
+    }
+  }
+  
+  /* Footer Section */
+  .main-footer {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .main-footer > .flex > * {
+    width: 15rem;
+  }
+  
+  .footer-heading {
+    font-family: "cinzel";
+    font-weight: 400;
+  }
+  
+  .footer-heading::after {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 20px 0 25px 0;
+  }
+  
+  .footer-heading ~ p {
+    line-height: 2;
+    font-size: 0.875rem;
+  }
+  
+  .footer-box .icon-style {
+    margin: 0 0.2em;
+    color: #000;
+    background: #fff;
+  }
+  
+  .popular-item {
+    padding-bottom: 1em;
+  }
+  
+  .popular-item > img {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    align-self: center;
+  }
+  
+  .popular-headline {
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  .popular-date {
+    font-size: 0.75rem;
+    margin: 0;
+  }
+  
+  .info-section {
+    font-family: "simple-line-icons";
+    font-size: 0.825rem;
+  }
+  
+  .info-section > *::before {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .clock-icon::before {
+    content: "\e081";
+  }
+  
+  .phone-icon::before {
+    content: "\e600";
+  }
+  
+  .location-icon::before {
+    content: "\e033";
+  }
+  
+  .email-icon::before {
+    content: "\e01f";
+  }
+  
+  .lookbook-footer.grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .footer-bottom-section {
+    border-top: solid 2px #262626;
+  }
+  
+  .copyright > p {
+    font-size: 0.825rem;
+    font-weight: 300;
+  }
+  
+  .footer-nav a {
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+  
+  .footer-nav {
+    width: 30rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .main-footer > .flex {
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+  
+    .footer-bottom-section > .flex {
+      align-items: center;
+    }
+  
+    .copyright > p {
+      font-size: 0.65rem;
+    }
+  
+    .footer-nav {
+      width: unset;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .footer-nav a {
+      font-size: 0.6rem;
+    }
+  }
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
